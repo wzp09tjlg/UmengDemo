@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.wuzp.umengdemo">
+
+    <!-- 友盟统计需要的权限 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".view.other.OtherActivity"
+            android:screenOrientation="portrait"/>
+
+        <!-- 友盟的配置 -->
+        <!-- 这是使用友盟 统计各个渠道的处理 -->
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="${CHANNEL_NAME}" />
+        <!-- 应用名叫做 第二极 在友盟上申请的appKey -->
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="58e4b1ce07fe6565450015d3" />
+        <meta-data
+            android:name="UMENG_MESSAGE_SECRET"
+            android:value="82525af778368e5acb8907328338d74e" />
+    </application>
+
+</manifest>
